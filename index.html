@@ -106,6 +106,58 @@
   </td>
 </tr>
 
+<tr onmouseout="radmesh_stop()" onmouseover="radmesh_start()"> 
+  <td style="padding:16px;width:20%;vertical-align:middle">
+    <div class="one" style="position:relative; width:100%;">
+      
+      <div class="two" id='radmesh_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+        <video id="radmesh_video" width="100%" height="100%" muted loop playsinline style="display:block; object-fit: cover;">
+          <source src="videos/tf_bt_out.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <img src='images/ball_touch_l.png' width="100%" style="display:block;">
+    </div>
+
+    <script type="text/javascript">
+      var v = document.getElementById('radmesh_video');
+      var container = document.getElementById('radmesh_video_container');
+
+      function radmesh_start() {
+        container.style.opacity = "1";
+        v.play();
+      }
+
+      function radmesh_stop() {
+        container.style.opacity = "0";
+        v.pause();
+        v.currentTime = 0; 
+      }
+      // 초기화
+      radmesh_stop();
+    </script>
+  </td>
+  
+  <td style="padding:8px;width:80%;vertical-align:middle">
+    <a href="https://half-potato.gitlab.io/rm/">
+      <span class="papertitle">Dynamic HDR Radiance Fields via Neural Scene Flow</span>
+    </a>
+    <br>
+    <strong>Shin Dong-Yeon</strong>,
+    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
+    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
+    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
+    <br>
+    <em>ICCV Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</em>, 2025
+    <br>
+    <p></p>
+    <p>
+      Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.
+    </p>
+  </td>
+</tr>
+
 
           </tbody></table>
 
