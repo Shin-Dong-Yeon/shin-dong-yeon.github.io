@@ -76,53 +76,52 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-<tr onmouseout="radmesh_stop()" onmouseover="radmesh_start()"> 
+<tr onmouseout="radmesh2_stop()" onmouseover="radmesh2_start()"> 
   <td style="padding:16px;width:20%;vertical-align:middle">
-    <div class="one">
-      <img src='images/ball_touch_l.png' width="100%" style="display:block;">
+    <div class="video-thumb-container">
       
-      <div id='radmesh_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s;">
-        <video id="radmesh_video" width="100%" height="100%" muted loop playsinline>
+      <div id='radmesh2_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+        <video id="radmesh2_video" muted loop playsinline>
           <source src="videos/tf_bt_out.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
+
+      <img src='images/ball_touch_l.png'>
     </div>
 
     <script type="text/javascript">
-      var v = document.getElementById('radmesh_video');
-      var container = document.getElementById('radmesh_video_container');
+      var v2 = document.getElementById('radmesh2_video');
+      var c2 = document.getElementById('radmesh2_video_container');
 
-      function radmesh_start() {
-        container.style.opacity = "1";
-        v.play();
+      function radmesh2_start() {
+        c2.style.opacity = "1";
+        v2.play();
       }
 
-      function radmesh_stop() {
-        container.style.opacity = "0";
-        v.pause();
-        v.currentTime = 0; // 마우스를 떼면 영상을 처음으로 되돌림 (선택사항)
+      function radmesh2_stop() {
+        c2.style.opacity = "0";
+        v2.pause();
+        v2.currentTime = 0; 
       }
     </script>
   </td>
-  
-  <td style="padding:8px;width:80%;vertical-align:middle">
-    <a href="https://half-potato.gitlab.io/rm/">
-      <span class="papertitle">Dynamic HDR Radiance Fields via Neural Scene Flow</span>
-    </a>
-    <br>
-    <strong>Shin Dong-Yeon</strong>,
-    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-    <br>
-    <em>ICCV Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</em>, 2025
-    <br>
-    <p></p>
-    <p>
-      Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.
-    </p>
-  </td>
+	  <td style="padding:8px;width:80%;vertical-align:middle">
+	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
+	      <span class="papertitle">HDR-NSFF: High Dynamic Range Neural Scene Flow Fields</span>
+	    </a>
+	    <br>
+	    <strong>Shin Dong-Yeon</strong>,
+	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
+	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
+	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
+	    <br>
+	    <em>Under review</em>
+	    <br>
+	    <p></p>
+	    <p>
+	      
+	    </p>
+   </td>
 </tr>
 
 <tr onmouseout="radmesh2_stop()" onmouseover="radmesh2_start()"> 
