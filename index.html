@@ -1,502 +1,175 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <title>Shin Dong-Yeon</title>
-
     <meta name="author" content="Shin Dong-Yeon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/camera.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-	<style>
-    .video-thumb-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;    
-      overflow: hidden;
-      border-radius: 8px;    
-    }
+    <style>
+        .video-thumb-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .video-thumb-container img, 
+        .video-thumb-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
 
-    .video-thumb-container img, 
-    .video-thumb-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  	</style>
-	  
-    
-  </head>
-
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
             <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Shin Dong-Yeon
-                </p>
-                <p>
-		I'm a M.S. student at POSTECH advised by <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh.
-		<!-- research scientist at <a href="https://deepmind.google/">Google DeepMind</a> in San Francisco, where I lead a small team that mostly works on <a href="https://www.matthewtancik.com/nerf">NeRF</a>. -->
-		<!-- At Google I've worked on <a href="https://www.google.com/glass/start/">Glass</a>,  <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://blog.google/products/google-ar-vr/introducing-next-generation-jump/">VR</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, <a href="https://ai.googleblog.com/2020/12/portrait-light-enhancing-portrait.html">Portrait Light</a>, <a href="https://blog.google/products/maps/three-maps-updates-io-2022/">Maps</a>, and <a href="https://research.google/blog/bringing-3d-shoppable-products-online-with-generative-ai/">Shopping</a>. -->
-		<!-- I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a>. -->
-		<!-- I've received the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>. -->
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:shindy@postech.ac.kr">Email</a> &nbsp;/&nbsp;
-                  <a href="data/Dong-Yeon-CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp; -->
-                  <!-- <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Scholar</a> &nbsp;/&nbsp; -->
-                  <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp;/&nbsp; -->
-                  <a href="https://github.com/Shin-Dong-Yeon/">Github</a> &nbsp;/&nbsp;
-				  <a href="https://www.linkedin.com/in/shin-dong-yeon/">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/dongyeon.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/dongyeon.jpeg" class="hoverZoomLink"></a>
-              </td>
+                <td style="padding:0px">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                                    <p class="name" style="text-align: center;">Shin Dong-Yeon</p>
+                                    <p>
+                                        I'm a M.S. student at POSTECH advised by <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh</a>.
+                                    </p>
+                                    <p style="text-align:center">
+                                        <a href="mailto:shindy@postech.ac.kr">Email</a> &nbsp;/&nbsp;
+                                        <a href="data/Dong-Yeon-CV.pdf">CV</a> &nbsp;/&nbsp;
+                                        <a href="https://github.com/Shin-Dong-Yeon/">Github</a> &nbsp;/&nbsp;
+                                        <a href="https://www.linkedin.com/in/shin-dong-yeon/">LinkedIn</a>
+                                    </p>
+                                </td>
+                                <td style="padding:2.5%;width:37%;max-width:37%">
+                                    <a href="images/dongyeon.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/dongyeon.jpeg"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:16px;width:100%;vertical-align:middle">
+                                    <h2>Research</h2>
+                                    <p>
+                                        I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+
+                            <tr onmouseout="hdr_nsff_3_stop()" onmouseover="hdr_nsff_3_start()">
+                                <td style="padding:16px;width:30%;vertical-align:middle">
+                                    <div class="video-thumb-container">
+                                        <div id='hdr_nsff_3_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+                                            <video id="hdr_nsff_3_video" muted loop playsinline>
+                                                <source src="videos/big_jump.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <img src='images/big_jump_l.png'>
+                                    </div>
+                                    <script type="text/javascript">
+                                        var v2 = document.getElementById('hdr_nsff_3_video');
+                                        var c2 = document.getElementById('hdr_nsff_3_video_container');
+                                        function hdr_nsff_3_start() { c2.style.opacity = "1"; v2.play(); }
+                                        function hdr_nsff_3_stop() { c2.style.opacity = "0"; v2.pause(); v2.currentTime = 0; }
+                                    </script>
+                                </td>
+                                <td style="padding:8px;width:70%;vertical-align:middle">
+                                    <a href="https://openreview.net/forum?id=yYNpug2B8d">
+                                        <span class="papertitle">HDR-NSFF: High Dynamic Range Neural Scene Flow Fields</span>
+                                    </a>
+                                    <br>
+                                    <strong>Shin Dong-Yeon</strong>, Kim Jun-Seong, Kwon Byung-Ki, Tae-Hyun Oh
+                                    <br>
+                                    <em>Under review</em>
+                                </td>
+                            </tr>
+
+                            <tr onmouseout="radmesh2_stop()" onmouseover="radmesh2_start()">
+                                <td style="padding:16px;width:30%;vertical-align:middle">
+                                    <div class="video-thumb-container">
+                                        <div id='radmesh2_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+                                            <video id="radmesh2_video" muted loop playsinline>
+                                                <source src="videos/tf_bt_out.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <img src='images/ball_touch_l.png'>
+                                    </div>
+                                    <script type="text/javascript">
+                                        var v1 = document.getElementById('radmesh2_video');
+                                        var c1 = document.getElementById('radmesh2_video_container');
+                                        function radmesh2_start() { c1.style.opacity = "1"; v1.play(); }
+                                        function radmesh2_stop() { c1.style.opacity = "0"; v1.pause(); v1.currentTime = 0; }
+                                    </script>
+                                </td>
+                                <td style="padding:8px;width:70%;vertical-align:middle">
+                                    <a href="https://openreview.net/forum?id=yYNpug2B8d">
+                                        <span class="papertitle">Dynamic HDR Radiance Fields via Neural Scene Flow</span>
+                                    </a>
+                                    <br>
+                                    <strong>Shin Dong-Yeon</strong>, Kim Jun-Seong, Kwon Byung-Ki, Tae-Hyun Oh
+                                    <br>
+                                    <em>ICCV Workshop on Wild3D</em>, 2025
+                                    <p>Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.</p>
+                                </td>
+                            </tr>
+
+                            <tr onmouseout="hdr_nsff_ipiu_stop()" onmouseover="hdr_nsff_ipiu_start()">
+                                <td style="padding:16px;width:30%;vertical-align:middle">
+                                    <div class="video-thumb-container">
+                                        <div id='hdr_nsff_ipiu_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+                                            <video id="hdr_nsff_ipiu_video" muted loop playsinline>
+                                                <source src="videos/tf_bt_out.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <img src='images/ball_touch_l.png'>
+                                    </div>
+                                    <script type="text/javascript">
+                                        var v0 = document.getElementById('hdr_nsff_ipiu_video');
+                                        var c0 = document.getElementById('hdr_nsff_ipiu_video_container');
+                                        function hdr_nsff_ipiu_start() { c0.style.opacity = "1"; v0.play(); }
+                                        function hdr_nsff_ipiu_stop() { c0.style.opacity = "0"; v0.pause(); v0.currentTime = 0; }
+                                    </script>
+                                </td>
+                                <td style="padding:8px;width:70%;vertical-align:middle">
+                                    <span class="papertitle">HDR-NSFF: High Dynamic Range Neural Scene Flow Fields</span>
+                                    <br>
+                                    <strong>Shin Dong-Yeon</strong>, Kim Jun-Seong, Kwon Byung-Ki, Tae-Hyun Oh
+                                    <br>
+                                    <em>37th Workshop on Image Processing and Image Understanding (IPIU)</em>, 2025
+                                    <p>Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.</p>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:0px">
+                                    <p style="text-align:right;font-size:small;">
+                                        Template adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website.</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
             </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. 
-					<!-- Some papers are <span class="highlight">highlighted</span>. -->
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
-<tr onmouseout="typo_erase_stop()" onmouseover="typo_erase_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-      <img src='images/big_jump_l.png'>
-    </div>
-
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-		A paper on TypoGraphic Attck
-
-	    <br>
-	    <em>To be updated</em>
-	    <br>
-	    <p></p>
-	    <p>
-	      
-	    </p>
-   </td>
-</tr>
-
-			  
-			  
-<tr onmouseout="hdr_nsff_3_stop()" onmouseover="hdr_nsff_3_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='hdr_nsff_3_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="hdr_nsff_3_video" muted loop playsinline>
-          <source src="videos/big_jump.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/big_jump_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v2 = document.getElementById('hdr_nsff_3_video');
-      var c2 = document.getElementById('hdr_nsff_3_video_container');
-
-      function hdr_nsff_3_start() {
-        c2.style.opacity = "1";
-        v2.play();
-      }
-
-      function hdr_nsff_3_stop() {
-        c2.style.opacity = "0";
-        v2.pause();
-        v2.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">HDR-NSFF: High Dynamic Range Neural Scene Flow Fields</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>Under review</em>
-	    <br>
-	    <p></p>
-	    <p>
-	      
-	    </p>
-   </td>
-</tr>
-
-<tr onmouseout="radmesh2_stop()" onmouseover="radmesh2_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='radmesh2_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="radmesh2_video" muted loop playsinline>
-          <source src="videos/tf_bt_out.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/ball_touch_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v1 = document.getElementById('radmesh2_video');
-      var c1 = document.getElementById('radmesh2_video_container');
-
-      function radmesh2_start() {
-        c1.style.opacity = "1";
-        v1.play();
-      }
-
-      function radmesh2_stop() {
-        c1.style.opacity = "0";
-        v1.pause();
-        v1.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">Dynamic HDR Radiance Fields via Neural Scene Flow</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>ICCV Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</em>, 2025
-	    <br>
-	    <p></p>
-	    <p>
-	      Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.
-	    </p>
-   </td>
-</tr>
-
-<tr onmouseout="hdr_nsff_ipiu_stop()" onmouseover="hdr_nsff_ipiu_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='hdr_nsff_ipiu_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="hdr_nsff_ipiu_video" muted loop playsinline>
-          <source src="videos/tf_bt_out.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/ball_touch_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v0 = document.getElementById('hdr_nsff_ipiu_video');
-      var c0 = document.getElementById('hdr_nsff_ipiu_container');
-
-      function hdr_nsff_ipiu_start() {
-        c0.style.opacity = "1";
-        v0.play();
-      }
-
-      function hdr_nsff_ipiu_stop() {
-        c0.style.opacity = "0";
-        v0.pause();
-        v0.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">HDR-NSFF:High Dynamic Range Neural Scene Flow Fields</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>37th Workshop on Image Processing and Image Understanding</em>, 2025
-	    <br>
-	    <p></p>
-	    <p>
-	      Reconstructing HDR dynamic radi<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Shin Dong-Yeon</title>
-
-    <meta name="author" content="Shin Dong-Yeon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/camera.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
-	<style>
-    .video-thumb-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;    
-      overflow: hidden;
-      border-radius: 8px;    
-    }
-
-    .video-thumb-container img, 
-    .video-thumb-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  	</style>
-	  
-    
-  </head>
-
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Shin Dong-Yeon
-                </p>
-                <p>
-		I'm a M.S. student at POSTECH advised by <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh.
-		<!-- research scientist at <a href="https://deepmind.google/">Google DeepMind</a> in San Francisco, where I lead a small team that mostly works on <a href="https://www.matthewtancik.com/nerf">NeRF</a>. -->
-		<!-- At Google I've worked on <a href="https://www.google.com/glass/start/">Glass</a>,  <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://blog.google/products/google-ar-vr/introducing-next-generation-jump/">VR</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, <a href="https://ai.googleblog.com/2020/12/portrait-light-enhancing-portrait.html">Portrait Light</a>, <a href="https://blog.google/products/maps/three-maps-updates-io-2022/">Maps</a>, and <a href="https://research.google/blog/bringing-3d-shoppable-products-online-with-generative-ai/">Shopping</a>. -->
-		<!-- I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a>. -->
-		<!-- I've received the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>. -->
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:shindy@postech.ac.kr">Email</a> &nbsp;/&nbsp;
-                  <a href="data/Dong-Yeon-CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp; -->
-                  <!-- <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Scholar</a> &nbsp;/&nbsp; -->
-                  <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp;/&nbsp; -->
-                  <a href="https://github.com/Shin-Dong-Yeon/">Github</a> &nbsp;/&nbsp;
-				  <a href="https://www.linkedin.com/in/shin-dong-yeon/">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/dongyeon.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/dongyeon.jpeg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. 
-					<!-- Some papers are <span class="highlight">highlighted</span>. -->
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-<tr onmouseout="hdr_nsff_3_stop()" onmouseover="hdr_nsff_3_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='hdr_nsff_3_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="hdr_nsff_3_video" muted loop playsinline>
-          <source src="videos/big_jump.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/big_jump_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v2 = document.getElementById('hdr_nsff_3_video');
-      var c2 = document.getElementById('hdr_nsff_3_video_container');
-
-      function hdr_nsff_3_start() {
-        c2.style.opacity = "1";
-        v2.play();
-      }
-
-      function hdr_nsff_3_stop() {
-        c2.style.opacity = "0";
-        v2.pause();
-        v2.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">HDR-NSFF: High Dynamic Range Neural Scene Flow Fields</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>Under review</em>
-	    <br>
-	    <p></p>
-	    <p>
-	      
-	    </p>
-   </td>
-</tr>
-
-<tr onmouseout="radmesh2_stop()" onmouseover="radmesh2_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='radmesh2_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="radmesh2_video" muted loop playsinline>
-          <source src="videos/tf_bt_out.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/ball_touch_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v1 = document.getElementById('radmesh2_video');
-      var c1 = document.getElementById('radmesh2_video_container');
-
-      function radmesh2_start() {
-        c1.style.opacity = "1";
-        v1.play();
-      }
-
-      function radmesh2_stop() {
-        c1.style.opacity = "0";
-        v1.pause();
-        v1.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">Dynamic HDR Radiance Fields via Neural Scene Flow</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>ICCV Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</em>, 2025
-	    <br>
-	    <p></p>
-	    <p>
-	      Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.
-	    </p>
-   </td>
-</tr>
-
-<tr onmouseout="hdr_nsff_ipiu_stop()" onmouseover="hdr_nsff_ipiu_start()"> 
-  <td style="padding:16px;width:30%;vertical-align:middle">
-    <div class="video-thumb-container">
-      
-      <div id='hdr_nsff_ipiu_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="hdr_nsff_ipiu_video" muted loop playsinline>
-          <source src="videos/tf_bt_out.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <img src='images/ball_touch_l.png'>
-    </div>
-
-    <script type="text/javascript">
-      var v0 = document.getElementById('hdr_nsff_ipiu_video');
-      var c0 = document.getElementById('hdr_nsff_ipiu_video_container');
-
-      function hdr_nsff_ipiu_start() {
-        c0.style.opacity = "1";
-        v0.play();
-      }
-
-      function hdr_nsff_ipiu_stop() {
-        c0.style.opacity = "0";
-        v0.pause();
-        v0.currentTime = 0; 
-      }
-    </script>
-  </td>
-	  <td style="padding:8px;width:80%;vertical-align:middle">
-	    <a href="https://openreview.net/forum?id=yYNpug2B8d">
-	      <span class="papertitle">HDR-NSFF:High Dynamic Range Neural Scene Flow Fields</span>
-	    </a>
-	    <br>
-	    <strong>Shin Dong-Yeon</strong>,
-	    <a href="https://github.com/Shmaug">Kim Jun-Seong</a>,
-	    <a href="https://grgkopanas.github.io/">Kwon Byung-Ki</a>,
-	    <a href="https://mediatech.aalto.fi/~janne/index.php">Tae-Hyun Oh</a>
-	    <br>
-	    <em>37th Workshop on Image Processing and Image Understanding</em>, 2025
-	    <br>
-	    <p></p>
-	    <p>
-	      Reconstructing HDR dynamic radiance field via alternatively exposed monocular videos.
-	    </p>
-   </td>
-</tr>
-
-
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-					Template adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website.</a>
-                  <!-- Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page. -->
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
+        </tbody>
     </table>
-  </body>
-</html>ㅍㅍance field via alternatively exposed monocular videos.
-	    </p>
-   </td>
-</tr>
-
-
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-					Template adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website.</a>
-                  <!-- Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page. -->
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
-  </body>
+</body>
 </html>
