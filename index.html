@@ -76,7 +76,7 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-<tr onmouseout="HDR-NSFF-ICLR_stop()" onmouseover="HDR-NSFF-ICLR_start()"> 
+<tr onmouseout="HDR_NSFF_ICLR_stop()" onmouseover="HDR_NSFF_ICLR_start()"> 
   <td style="padding:16px;width:20%;vertical-align:middle">
     <div class="video-thumb-container">
       
@@ -93,12 +93,12 @@
       var v2 = document.getElementById('radmesh2_video');
       var c2 = document.getElementById('radmesh2_video_container');
 
-      function HDR-NSFF-ICLR_start() {
+      function HDR_NSFF_ICLR_start() {
         c2.style.opacity = "1";
         v2.play();
       }
 
-      function HDR-NSFF-ICLR_stop() {
+      function HDR_NSFF_ICLR_stop() {
         c2.style.opacity = "0";
         v2.pause();
         v2.currentTime = 0; 
