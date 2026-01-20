@@ -76,12 +76,12 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-<tr onmouseout="HDR_NSFF_ICLR_stop()" onmouseover="HDR_NSFF_ICLR_start()"> 
+<tr onmouseout="hdr_nsff_3_stop()" onmouseover="hdr_nsff_3_start()"> 
   <td style="padding:16px;width:20%;vertical-align:middle">
     <div class="video-thumb-container">
       
-      <div id='radmesh2_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
-        <video id="radmesh2_video" muted loop playsinline>
+      <div id='hdr_nsff_3_video_container' style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition: opacity 0.3s; z-index: 1;">
+        <video id="hdr_nsff_3_video" muted loop playsinline>
           <source src="videos/tf_bt_out.mp4" type="video/mp4">
         </video>
       </div>
@@ -90,15 +90,15 @@
     </div>
 
     <script type="text/javascript">
-      var v2 = document.getElementById('radmesh2_video');
-      var c2 = document.getElementById('radmesh2_video_container');
+      var v2 = document.getElementById('hdr_nsff_3_video');
+      var c2 = document.getElementById('hdr_nsff_3_video_container');
 
-      function HDR_NSFF_ICLR_start() {
+      function hdr_nsff_3_start() {
         c2.style.opacity = "1";
         v2.play();
       }
 
-      function HDR_NSFF_ICLR_stop() {
+      function hdr_nsff_3_stop() {
         c2.style.opacity = "0";
         v2.pause();
         v2.currentTime = 0; 
