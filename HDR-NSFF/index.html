@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>HDR-NSFF</title>
+
+    <meta name="description" content="HDR-NSFF: High Dynamic Range Neural Scene Flow Fields">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://shin-dong-yeon.github.io/HDR-NSFF/img/teaser.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shin-dong-yeon.github.io/HDR-NSFF/"/>
+    <meta property="og:title" content="HDR-NSFF: High Dynamic Range Neural Scene Flow Fields" />
+    <meta property="og:description" content="HDR-NSFF reconstructs dynamic HDR radiance fields from alternating-exposure monocular videos, enabling novel HDR space-time view synthesis." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HDR-NSFF: High Dynamic Range Neural Scene Flow Fields" />
+    <meta name="twitter:description" content="HDR-NSFF reconstructs dynamic HDR radiance fields from alternating-exposure monocular videos, enabling novel HDR space-time view synthesis." />
+    <meta name="twitter:image" content="https://shin-dong-yeon.github.io/HDR-NSFF/img/teaser.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+        .section-title { margin-top: 30px; margin-bottom: 15px; }
+        .tag {
+            display: inline-block;
+            background: #1772d0;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-right: 5px;
+        }
+        .comparison-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 13px; }
+        .comparison-table th { background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd; }
+        .comparison-table td { padding: 6px 10px; border: 1px solid #ddd; }
+        .comparison-table tr.ours td { font-weight: bold; background: #fffde7; }
+        .highlight-row td { font-weight: bold; background: #e8f5e9; }
+        .method-box {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .method-box h4 { margin-top: 0; color: #1772d0; }
+        .venue-badge {
+            display: inline-block;
+            background: #c62828;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .video-caption { text-align: center; color: #555; font-size: 13px; margin-top: 6px; }
+        .author-list li { margin: 4px 12px; }
+        .links-row { margin: 12px 0 20px 0; }
+        .links-row a { margin: 0 8px; }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+
+        <!-- Title -->
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <h2>
+                    <b>HDR-NSFF</b>: High Dynamic Range Neural Scene Flow Fields
+                    <span class="venue-badge">ICLR 2026</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Authors -->
+        <div class="row" style="margin-top: 12px;">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <ul class="list-inline author-list">
+                    <li>
+                        <a href="https://shin-dong-yeon.github.io/">Shin Dong-Yeon</a><sup>1</sup>
+                    </li>
+                    <li>
+                        Kim Jun-Seong<sup>2</sup>
+                    </li>
+                    <li>
+                        Kwon Byung-Ki<sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh</a><sup>1</sup>
+                    </li>
+                </ul>
+                <p style="color: #555; font-size: 13px;">
+                    <sup>1</sup>School of Computing / School of Electrical Engineering, KAIST &nbsp;&nbsp;
+                    <sup>2</sup>Dept. of Electrical Engineering / Grad. School of AI, POSTECH
+                </p>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center links-row">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://arxiv.org/abs/2603.08313">
+                            <img src="img/paper_icon.png" height="50px" onerror="this.style.display='none'">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/kaist-ami/HDR-NSFF">
+                            <img src="img/github.png" height="50px" onerror="this.style.display='none'">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/database_icon.png" height="50px" onerror="this.style.display='none'">
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="img/poster.pdf">
+                            <img src="img/poster_icon.png" height="50px" onerror="this.style.display='none'">
+                            <h4><strong>Poster</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Teaser -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <video id="teaser_video" width="100%" autoplay loop muted controls playsinline style="border-radius: 6px;">
+                    <source src="img/teaser.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">
+                    <b>HDR-NSFF</b> takes alternating-exposure monocular videos as input and enables
+                    (b) HDR novel view synthesis across both spatial and temporal domains,
+                    as well as (c) novel LDR views at any target exposure with corresponding depth maps.
+                </p>
+            </div>
+        </div>
+
+        <!-- Abstract -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Abstract</h3>
+                <p class="text-justify">
+                    Radiance of real-world scenes typically spans a much wider dynamic range than what standard cameras can capture. While conventional HDR methods merge alternating-exposure frames, these approaches are inherently constrained to 2D pixel-level alignment, often leading to ghosting artifacts and temporal inconsistency in dynamic scenes. To address these limitations, we present <b>HDR-NSFF</b>, a paradigm shift from 2D-based merging to 4D spatio-temporal modeling. Our framework reconstructs dynamic HDR radiance fields from alternating-exposure monocular videos by representing the scene as a continuous function of space and time, and is compatible with both neural radiance field and 4D Gaussian Splatting (4DGS) based dynamic representations. This unified end-to-end pipeline explicitly models HDR radiance, 3D scene flow, geometry, and tone-mapping, ensuring physical plausibility and global coherence. We further enhance robustness by (i) extending semantic-based optical flow with DINOv2 features to achieve exposure-invariant motion estimation, and (ii) incorporating a generative prior as a regularizer to compensate for limited observation in monocular captures and saturation-induced information loss. To evaluate HDR space-time view synthesis, we present the first real-world <b>HDR-GoPro dataset</b> specifically designed for dynamic HDR scenes. Experiments demonstrate that HDR-NSFF recovers fine radiance details and coherent dynamics even under challenging exposure variations, thereby achieving state-of-the-art performance in novel space-time view synthesis.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key Idea -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Why 4D instead of 2D?</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>HDR Video (2D)</th>
+                            <th><b>Ours (4D)</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Motion modeling</td>
+                            <td>Pixel-level</td>
+                            <td><b>3D scene flow</b></td>
+                        </tr>
+                        <tr>
+                            <td>Geometry</td>
+                            <td>None</td>
+                            <td><b>Explicit depth</b></td>
+                        </tr>
+                        <tr>
+                            <td>Temporal scope</td>
+                            <td>3–7 frames</td>
+                            <td><b>Entire video</b></td>
+                        </tr>
+                        <tr>
+                            <td>Output</td>
+                            <td>One HDR frame</td>
+                            <td><b>HDR novel view &amp; time synthesis</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-justify" style="margin-top: 12px;">
+                    Conventional 2D HDR video methods align and merge alternating-exposure frames using optical flow in the image plane, which causes color drift and geometric flickering when scenes contain large or complex motions. HDR-NSFF avoids these problems by reconstructing a unified 4D spatio-temporal HDR radiance field, ensuring both appearance and geometry remain consistent across the entire video duration.
+                </p>
+            </div>
+        </div>
+
+        <!-- Method -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Method Overview</h3>
+                <img src="img/pipeline.png" width="100%" style="border-radius: 6px;" alt="Pipeline">
+                <!-- TODO: replace with actual pipeline figure -->
+                <p class="video-caption" style="margin-top: 8px;">
+                    <b>Overall pipeline.</b> HDR-NSFF takes an alternating-exposure monocular video as input and estimates 3D scene flow for sampled points along each ray. Neighboring frames are warped to render the HDR radiance at the target frame, which is tone-mapped to LDR via a learnable white-balance and camera-response function (CRF) module. All components are jointly optimized end-to-end.
+                </p>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-4">
+                        <div class="method-box">
+                            <h4>Tone-Mapping Module</h4>
+                            <p>A learnable piecewise CRF with per-channel white balance maps rendered HDR radiance to LDR observations. Smoothness regularization ensures physically plausible CRF curves under extreme exposures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="method-box">
+                            <h4>Semantic Optical Flow</h4>
+                            <p>Standard optical flow degrades under alternating exposures. We leverage <b>DINOv2</b> semantic features, which are invariant to photometric changes, to produce reliable exposure-robust motion estimates via DINO-Tracker.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="method-box">
+                            <h4>Generative Prior</h4>
+                            <p>Monocular capture limits observations and saturated regions cause information loss. A generative prior periodically synthesizes enhanced novel views as pseudo-labels, bootstrapping the 4D reconstruction into a pseudo-multi-view problem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Semantic Flow Visualization -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Exposure-Robust Optical Flow</h3>
+                <img src="img/flow_comparison.png" width="100%" style="border-radius: 6px;" alt="Flow comparison">
+                <!-- TODO: replace with actual figure -->
+                <p class="video-caption" style="margin-top: 8px;">
+                    Standard optical flow (RAFT) fails under alternating exposures — even with gamma correction or fine-tuning on synthetic data. Our semantic-based approach using DINOv2 features achieves accurate motion estimation regardless of exposure variation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Qualitative Results -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Qualitative Results — Novel View Synthesis</h3>
+                <img src="img/qualitative_nvs.png" width="100%" style="border-radius: 6px;" alt="Novel view synthesis comparison">
+                <!-- TODO: replace with actual figure -->
+                <p class="video-caption" style="margin-top: 8px;">
+                    <b>Qualitative comparison on our HDR-GoPro dataset.</b> Odd rows: LDR novel views with L1 error maps against ground truth. Even rows: tone-mapped HDR novel views. Our method consistently produces the smallest errors and most accurate radiance across scenes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Demo Videos -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Results</h3>
+                <p>Below are sample results on our HDR-GoPro dataset scenes. Each clip shows HDR novel space-time view synthesis rendered at mid exposure.</p>
+                <!-- TODO: add video grid when videos are available -->
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 4px; text-align: center;">
+                            <video width="100%" autoplay loop muted playsinline>
+                                <source src="img/big_jump_nvs.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">Big Jump</div>
+                        </td>
+                        <td style="padding: 4px; text-align: center;">
+                            <video width="100%" autoplay loop muted playsinline>
+                                <source src="img/pointing_walk_nvs.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">Pointing Walk</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px; text-align: center;">
+                            <video width="100%" autoplay loop muted playsinline>
+                                <source src="img/bear_nvs.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">Bear</div>
+                        </td>
+                        <td style="padding: 4px; text-align: center;">
+                            <video width="100%" autoplay loop muted playsinline>
+                                <source src="img/tumbler_nvs.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-caption">Tumbler</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LDR at multiple exposures -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Novel LDR View Synthesis at Multiple Exposures</h3>
+                <img src="img/ldr_exposure_comparison.png" width="100%" style="border-radius: 6px;" alt="LDR views at multiple exposures">
+                <!-- TODO: replace with actual figure -->
+                <p class="video-caption" style="margin-top: 8px;">
+                    HDR-NSFF recovers the full radiance range, enabling rendering at any target exposure level. Histograms confirm that our reconstructed HDR closely matches the ground-truth radiance distribution.
+                </p>
+            </div>
+        </div>
+
+        <!-- Quantitative -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Quantitative Comparisons</h3>
+                <p><b>Novel view synthesis on HDR-GoPro dataset</b> (higher PSNR/SSIM and lower LPIPS is better):</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Method</th>
+                            <th colspan="3">Full Scene</th>
+                            <th colspan="3">Dynamic Only</th>
+                        </tr>
+                        <tr>
+                            <th>PSNR↑</th><th>SSIM↑</th><th>LPIPS↓</th>
+                            <th>PSNR↑</th><th>SSIM↑</th><th>LPIPS↓</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>NSFF</td><td>18.02</td><td>0.6792</td><td>0.2061</td><td>17.59</td><td>0.5473</td><td>0.2529</td></tr>
+                        <tr><td>4DGS</td><td>20.94</td><td>0.7905</td><td>0.1541</td><td>17.83</td><td>0.5524</td><td>0.2230</td></tr>
+                        <tr><td>MotionGS</td><td>14.61</td><td>0.3976</td><td>0.3617</td><td>12.33</td><td>0.2303</td><td>0.4696</td></tr>
+                        <tr><td>NeRF-WT</td><td>29.70</td><td>0.9333</td><td>0.0598</td><td>19.25</td><td>0.6355</td><td>0.1770</td></tr>
+                        <tr><td>HDR-HexPlane</td><td>20.70</td><td>0.6694</td><td>0.1917</td><td>20.55</td><td>0.6629</td><td>0.1716</td></tr>
+                        <tr><td>Ours (w/o DT)</td><td>29.93</td><td>0.9364</td><td>0.0621</td><td>24.93</td><td>0.8068</td><td>0.1048</td></tr>
+                        <tr><td>Ours (w/o GP)</td><td>32.66</td><td>0.9447</td><td>0.0557</td><td>25.65</td><td>0.8205</td><td>0.1012</td></tr>
+                        <tr class="ours"><td><b>Ours</b></td><td><b>32.63</b></td><td><b>0.9444</b></td><td><b>0.0554</b></td><td><b>25.50</b></td><td><b>0.9208</b></td><td><b>0.0972</b></td></tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 20px;"><b>Novel view and time synthesis on synthetic data</b>:</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Method</th>
+                            <th colspan="3">Full Scene</th>
+                            <th colspan="3">Dynamic Only</th>
+                        </tr>
+                        <tr>
+                            <th>PSNR↑</th><th>SSIM↑</th><th>LPIPS↓</th>
+                            <th>PSNR↑</th><th>SSIM↑</th><th>LPIPS↓</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>NSFF</td><td>15.98</td><td>0.6457</td><td>0.1388</td><td>16.04</td><td>0.5697</td><td>0.1527</td></tr>
+                        <tr><td>NeRF-WT</td><td>31.10</td><td>0.9366</td><td>0.0342</td><td>21.50</td><td>0.7490</td><td>0.0895</td></tr>
+                        <tr><td>HDR-HexPlane</td><td>29.95</td><td>0.9055</td><td>0.0527</td><td>23.87</td><td>0.7999</td><td>0.1071</td></tr>
+                        <tr class="ours"><td><b>Ours</b></td><td><b>35.07</b></td><td><b>0.9465</b></td><td><b>0.0483</b></td><td><b>27.19</b></td><td><b>0.8836</b></td><td><b>0.0576</b></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Dataset -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">HDR-GoPro Dataset</h3>
+                <img src="img/dataset.png" width="100%" style="border-radius: 6px;" alt="HDR-GoPro dataset">
+                <!-- TODO: replace with actual dataset figure -->
+                <p class="text-justify" style="margin-top: 10px;">
+                    We introduce the <b>first real-world HDR benchmark for dynamic scene view synthesis</b>. Nine synchronized GoPro Hero 13 Black cameras are arranged in a nearly parallel configuration. Cameras are divided into three exposure groups (low, mid, high). An alternating-exposure monocular video is constructed from one camera per timestep, while the remaining eight viewpoints serve as held-out evaluation references. The dataset comprises <b>12 diverse indoor and outdoor scenes</b> featuring complex human motions such as big jumps, tumbling, bear interactions, and walking.
+                </p>
+                <ul>
+                    <li><b>9 synchronized cameras</b> with explicit multi-exposure variations</li>
+                    <li><b>3 exposure levels</b> per scene (low, mid, high)</li>
+                    <li><b>12 scenes</b> with challenging large-motion dynamics</li>
+                    <li>Supports both novel <b>view</b> and novel <b>time</b> synthesis evaluation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BibTeX -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Citation</h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly rows="10">@inproceedings{shin2026hdrnsff,
+    title={{HDR-NSFF}: High Dynamic Range Neural Scene Flow Fields},
+    author={Shin, Dong-Yeon and Kim, Jun-Seong and Kwon, Byung-Ki and Oh, Tae-Hyun},
+    booktitle={International Conference on Learning Representations (ICLR)},
+    year={2026}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acknowledgements -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="section-title">Acknowledgements</h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/zipnerf">Zip-NeRF</a> and <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 30px;">
+        </div>
+    </div>
+</body>
+</html>
